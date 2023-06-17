@@ -21,7 +21,14 @@
           <td>{{ user.address.street }}</td>
           <td>{{ user.company.name }}</td>
           <td>
-            <router-link to="" class="btn btn-primary btn-sm"
+            <router-link
+              :to="{
+                name: 'users.show',
+                params: {
+                  id: user.id,
+                },
+              }"
+              class="btn btn-primary btn-sm"
               >Detail
             </router-link>
           </td>

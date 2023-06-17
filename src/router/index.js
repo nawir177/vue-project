@@ -3,6 +3,7 @@ import Home from "./../views/Home.vue";
 import About from "./../views/About.vue";
 import Contact from "./../views/Contact.vue";
 import Users from "./../views/Users.vue";
+import ShowUser from "./../views/ShowUser.vue";
 
 const routes = [
   {
@@ -24,6 +25,12 @@ const routes = [
     path: "/users",
     name: "users",
     component: Users,
+  },
+  {
+    path: "/users/:id",
+    name: "users.show",
+    component: ShowUser,
+    props: true,
   },
 ];
 
