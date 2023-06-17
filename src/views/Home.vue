@@ -35,6 +35,8 @@
 
 <!-- Option API -->
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -56,12 +58,11 @@ export default {
       this.todoInput = "";
     },
     getUsers() {
-      fetch("https://jsonplaceholder.typicode.com/users")
-        .then(response => response.json())
-        .then(json => {
-          this.isLoading = true;
-          this.users = json;
-        });
+      // call api with axios
+      axios.get("/users").then(response => {
+        this.isLoading = true;
+        this.users = response.data;
+      });
     },
   },
   mounted() {
